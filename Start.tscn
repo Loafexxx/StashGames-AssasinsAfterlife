@@ -1,24 +1,47 @@
-[gd_scene load_steps=4 format=3 uid="uid://cf3vns6bhjhqo"]
+[gd_scene load_steps=6 format=3 uid="uid://cf3vns6bhjhqo"]
 
-[ext_resource type="Script" uid="uid://b7i4yovyau1g3" path="res://character_body_2d.gd" id="1_52bhu"]
+[ext_resource type="Script" uid="uid://6ds3gerwvn0" path="res://PlayerMovement.gd" id="1_52bhu"]
 [ext_resource type="Texture2D" uid="uid://bwippo2hflvvs" path="res://icon.svg" id="1_r305v"]
+[ext_resource type="Script" uid="uid://cqtrxkqubv1k4" path="res://PlayerCollison.gd" id="2_upmy7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bupin"]
 size = Vector2(128, 129)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_52bhu"]
+size = Vector2(1331, 120)
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Player" type="Node2D" parent="."]
 position = Vector2(146, 15)
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="Player"]
+[node name="RigidBody2D" type="RigidBody2D" parent="Player"]
 script = ExtResource("1_52bhu")
+metadata/PlayerMovementSpeed = 125.0
+metadata/MaxSpeed = 250.0
+metadata/JumpHeight = 10.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/CharacterBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/RigidBody2D"]
 position = Vector2(-6, 28.5)
+scale = Vector2(0.678297, 0.678297)
 shape = SubResource("RectangleShape2D_bupin")
+script = ExtResource("2_upmy7")
 
-[node name="Icon" type="Sprite2D" parent="Player/CharacterBody2D"]
+[node name="Icon" type="Sprite2D" parent="Player/RigidBody2D"]
 modulate = Color(0, 0.61796, 0.514497, 1)
 position = Vector2(-5, 30)
+scale = Vector2(0.678297, 0.678297)
 texture = ExtResource("1_r305v")
+
+[node name="Floor" type="Node2D" parent="."]
+position = Vector2(523, 543)
+
+[node name="Icon" type="Sprite2D" parent="Floor"]
+scale = Vector2(10.0803, 1)
+texture = ExtResource("1_r305v")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Floor"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor/StaticBody2D"]
+position = Vector2(19.5, -4)
+shape = SubResource("RectangleShape2D_52bhu")
