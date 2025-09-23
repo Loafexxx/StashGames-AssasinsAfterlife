@@ -33,6 +33,15 @@ position = Vector2(-5, 30)
 scale = Vector2(0.678297, 0.678297)
 texture = ExtResource("1_r305v")
 
+[node name="Hitbox" type="Area2D" parent="Player"]
+script = ExtResource("2_upmy7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Hitbox"]
+position = Vector2(-6, 28.5)
+scale = Vector2(0.678297, 0.678297)
+shape = SubResource("RectangleShape2D_bupin")
+script = ExtResource("2_upmy7")
+
 [node name="Floor" type="Node2D" parent="."]
 position = Vector2(523, 543)
 

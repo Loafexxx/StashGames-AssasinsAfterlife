@@ -1,1 +1,1 @@
-extends CollisionShape2D
+extends Area2D
