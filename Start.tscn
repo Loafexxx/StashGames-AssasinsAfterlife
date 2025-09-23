@@ -9,7 +9,7 @@ size = Vector2(128, 129)
 [node name="Node2D" type="Node2D"]
 
 [node name="Player" type="Node2D" parent="."]
-position = Vector2(611, 209)
+position = Vector2(146, 15)
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="Player"]
 script = ExtResource("1_52bhu")
@@ -19,6 +19,6 @@ position = Vector2(-6, 28.5)
 shape = SubResource("RectangleShape2D_bupin")
 
 [node name="Icon" type="Sprite2D" parent="Player/CharacterBody2D"]
-modulate = Color(0.953264, 0, 0.487187, 1)
+modulate = Color(0, 0.61796, 0.514497, 1)
 position = Vector2(-5, 30)
 texture = ExtResource("1_r305v")
