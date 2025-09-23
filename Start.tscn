@@ -8,15 +8,17 @@ size = Vector2(128, 129)
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="Player" type="Node2D" parent="."]
+position = Vector2(611, 209)
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="Node2D"]
+[node name="CharacterBody2D" type="CharacterBody2D" parent="Player"]
 script = ExtResource("1_52bhu")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/CharacterBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/CharacterBody2D"]
 position = Vector2(-6, 28.5)
 shape = SubResource("RectangleShape2D_bupin")
 
-[node name="Icon" type="Sprite2D" parent="Node2D/CharacterBody2D"]
-position = Vector2(-6, 29)
+[node name="Icon" type="Sprite2D" parent="Player/CharacterBody2D"]
+modulate = Color(0.953264, 0, 0.487187, 1)
+position = Vector2(-5, 30)
 texture = ExtResource("1_r305v")
