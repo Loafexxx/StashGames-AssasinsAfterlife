@@ -1,3 +1,4 @@
 res://Start.tscn
 res://PlayerMovement.gd
 res://PlayerCollison.gd
+res://FixedPlayerMovement.gd
