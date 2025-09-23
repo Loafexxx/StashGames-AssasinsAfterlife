@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://cf3vns6bhjhqo"]
+[gd_scene load_steps=9 format=3 uid="uid://cf3vns6bhjhqo"]
 
 [ext_resource type="Texture2D" uid="uid://bwippo2hflvvs" path="res://icon.svg" id="1_r305v"]
 [ext_resource type="Script" uid="uid://dnmcoln3qhv4n" path="res://FixedPlayerMovement.gd" id="1_upmy7"]
 [ext_resource type="Script" uid="uid://cqtrxkqubv1k4" path="res://PlayerCollison.gd" id="2_upmy7"]
+[ext_resource type="Script" uid="uid://c0dbcmtpw1bi5" path="res://EnemyAttraction.gd" id="4_gx2gx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bupin"]
 size = Vector2(128, 129)
@@ -10,8 +11,11 @@ size = Vector2(128, 129)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_52bhu"]
 size = Vector2(1331, 120)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_upmy7"]
-size = Vector2(217, 202)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gx2gx"]
+size = Vector2(131, 130)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xhal0"]
+size = Vector2(593.5, 453)
 
 [node name="Node2D" type="Node2D"]
 
@@ -21,10 +25,8 @@ position = Vector2(146, 15)
 [node name="CharacterBody2D" type="CharacterBody2D" parent="Player"]
 position = Vector2(-146, -15)
 script = ExtResource("1_upmy7")
-metadata/MaxSpeed = 250.0
-metadata/PlayerMovementSpeed = 125.0
-metadata/JumpHeight = 20.0
-metadata/Weight = 0.0
+metadata/PlayerMovementSpeed = 400.0
+metadata/JumpHeight = -600.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player/CharacterBody2D"]
 position = Vector2(140, 43.5)
@@ -65,11 +67,22 @@ shape = SubResource("RectangleShape2D_52bhu")
 position = Vector2(19.5, -4)
 shape = SubResource("RectangleShape2D_52bhu")
 
-[node name="TestBox" type="Node2D" parent="."]
-position = Vector2(872, 358)
+[node name="Enemys" type="Node2D" parent="."]
 
-[node name="Area2D" type="Area2D" parent="TestBox"]
+[node name="Test" type="Node2D" parent="Enemys"]
+position = Vector2(602, 357)
+script = ExtResource("4_gx2gx")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TestBox/Area2D"]
-position = Vector2(-55.5, -33)
-shape = SubResource("RectangleShape2D_upmy7")
+[node name="RigidBody2D" type="RigidBody2D" parent="Enemys/Test"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemys/Test/RigidBody2D"]
+shape = SubResource("RectangleShape2D_gx2gx")
+
+[node name="Icon" type="Sprite2D" parent="Enemys/Test/RigidBody2D"]
+texture = ExtResource("1_r305v")
+
+[node name="Area2D" type="Area2D" parent="Enemys/Test"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemys/Test/Area2D"]
+position = Vector2(0, -162)
+shape = SubResource("RectangleShape2D_xhal0")
