@@ -1,7 +1,8 @@
-[gd_scene load_steps=28 format=3 uid="uid://cf3vns6bhjhqo"]
+[gd_scene load_steps=30 format=3 uid="uid://cf3vns6bhjhqo"]
 
 [ext_resource type="Texture2D" uid="uid://bwippo2hflvvs" path="res://icon.svg" id="1_r305v"]
 [ext_resource type="Script" uid="uid://dnmcoln3qhv4n" path="res://FixedPlayerMovement.gd" id="1_upmy7"]
+[ext_resource type="Script" uid="uid://1am6aklgs2gi" path="res://EnemyTPToArena.gd" id="3_mgjkx"]
 [ext_resource type="Texture2D" uid="uid://djm40d5k0f4fo" path="res://Animations/Placeholders/Idle/frame_00_delay-0.09s.png" id="4_ox2yh"]
 [ext_resource type="Texture2D" uid="uid://dercfgn3c8foe" path="res://Animations/Placeholders/Walking/42d4475a-0810-46cd-ab79-8000dd279384-0.png" id="4_u7ysv"]
 [ext_resource type="Texture2D" uid="uid://q43bdiclp6eu" path="res://Animations/Placeholders/Idle/frame_01_delay-0.09s.png" id="5_mgjkx"]
@@ -116,6 +117,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mgjkx"]
+size = Vector2(181, 159)
+
 [node name="Node2D" type="Node2D"]
 
 [node name="Player" type="Node2D" parent="."]
@@ -137,7 +141,7 @@ modulate = Color(0, 0.61796, 0.514497, 1)
 scale = Vector2(0.678297, 0.678297)
 texture = ExtResource("1_r305v")
 
-[node name="Hitbox" type="Area2D" parent="Player/CharacterBody2D"]
+[node name="Hitbox" type="Area2D" parent="Player/CharacterBody2D" groups=["Player"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player/CharacterBody2D/Hitbox"]
 scale = Vector2(0.678297, 0.678297)
@@ -176,6 +180,7 @@ script = SubResource("GDScript_gx2gx")
 collision_layer = 2
 collision_mask = 2
 lock_rotation = true
+script = ExtResource("3_mgjkx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enemys/Boss-Empty/RigidBody2D" groups=["Boss"]]
 shape = SubResource("RectangleShape2D_gx2gx")
@@ -195,4 +200,16 @@ shape = SubResource("RectangleShape2D_xhal0")
 sprite_frames = SubResource("SpriteFrames_2c8kb")
 animation = &"Idle"
 
+[node name="Hurtbox" type="Area2D" parent="Enemys/Boss-Empty/RigidBody2D" groups=["Boss"]]
+script = ExtResource("6_5tfw5")
+metadata/Y_Speed = 0.0
+metadata/X_Speed = 100.0
+metadata/MoveY = false
+metadata/MoveX = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemys/Boss-Empty/RigidBody2D/Hurtbox"]
+position = Vector2(-1.5, -14.5)
+shape = SubResource("RectangleShape2D_mgjkx")
+
 [connection signal="body_entered" from="Player/CharacterBody2D/Hitbox" to="Player/CharacterBody2D" method="_on_hitbox_body_entered"]
+[connection signal="body_entered" from="Enemys/Boss-Empty/RigidBody2D/Hurtbox" to="Enemys/Boss-Empty/RigidBody2D" method="_on_hurtbox_body_entered"]

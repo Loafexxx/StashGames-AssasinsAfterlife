@@ -1,4 +1,4 @@
-extends StaticBody2D
+extends RigidBody2D
 
 
 # Called when the node enters the scene tree for the first time.
@@ -10,5 +10,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-func _body_collide_thingy(body: Node2D) -> void:
-	print("uwu")
+
+
+func _on_hurtbox_body_entered(body: Node2D) -> void:
+	if body.is_in_group("Player"):
+		print("TELEPORT")

@@ -16,14 +16,14 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 
 	if detecting:
-		if get_meta("MoveX"): #sees the axis it needs to move to (in this case X)
+		if get_meta("MoveX"): #sees the axispass # Replace with function body. it needs to move to (in this case X)
 			if playerChar.global_position.x < self_rigidbody.global_position.x: #checks to see if the player is on the left, if they are the boss moves towards them
 				self_rigidbody.linear_velocity.x = (get_meta("X_Speed")*-1) #sets the bosses X velocity
 				animatedsprite.scale.x = -1 #Faces Left
 				
 			if playerChar.global_position.x > self_rigidbody.global_position.x: #checks to see if the player is on the right, if they are the boss moves towards them
 				self_rigidbody.linear_velocity.x = get_meta("X_Speed") #sets the bosses X velocity
-				animatedsprite.scale.x = 1 #Faces Rigt
+				animatedsprite.scale.x = 1 #Faces Rigst
 
 				
 		if get_meta("MoveY"): #sees the axis it needs to move to (in this case Y)
@@ -32,13 +32,15 @@ func _process(delta: float) -> void:
 				
 			if playerChar.global_position.y > self_rigidbody.global_position.y: #checks to see if the player is above, if they are the boss moves towards them
 				self_rigidbody.linear_velocity.y = get_meta("Y_Speed") #sets the bosses Y velocity
-	else:
-		animatedsprite.play("Idle") #Play the idle animation
+
 			
 	
-func _on_area_entered(area: Area2D) -> void: #when the player is in range of the boss (touching the area2d called Range) it turns on detecting which locates what side to move to
-	detecting = true 
-	animatedsprite.play("Walking") #Play the walking animation
+func _on_area_entered(area: Area2D) -> void: 
+	if area.is_in_group("Player"): #checks to see if the thing its touching is in the player group
+		detecting = true #when the player is in range of the boss (touching the area2d called Range) it turns on detecting which locates what side to move to
+		animatedsprite.play("Walking") #Play the walking animation
 
-func _on_area_exited(area: Area2D) -> void: #turns off detecting
-	detecting = false
+func _on_area_exited(area: Area2D) -> void:
+	if area.is_in_group("Player"): #checks to see if the thing its not touching anymore is in the player group
+		detecting = false #turns off detecting
+		animatedsprite.play("Idle") #Play the idle animation
