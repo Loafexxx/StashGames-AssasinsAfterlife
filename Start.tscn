@@ -1,9 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://cf3vns6bhjhqo"]
+[gd_scene load_steps=11 format=3 uid="uid://cf3vns6bhjhqo"]
 
 [ext_resource type="Texture2D" uid="uid://bwippo2hflvvs" path="res://icon.svg" id="1_r305v"]
 [ext_resource type="Script" uid="uid://dnmcoln3qhv4n" path="res://FixedPlayerMovement.gd" id="1_upmy7"]
 [ext_resource type="Script" uid="uid://cqtrxkqubv1k4" path="res://PlayerCollison.gd" id="2_upmy7"]
 [ext_resource type="Script" uid="uid://c0dbcmtpw1bi5" path="res://EnemyAttraction.gd" id="4_gx2gx"]
+[ext_resource type="Script" uid="uid://d1e5b4udurgqo" path="res://EnemyRigidbody.gd" id="5_b54qk"]
+[ext_resource type="Script" uid="uid://c8yp6pclesjc0" path="res://EmemyMoveToPlayer.gd" id="6_5tfw5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bupin"]
 size = Vector2(128, 129)
@@ -69,20 +71,27 @@ shape = SubResource("RectangleShape2D_52bhu")
 
 [node name="Enemys" type="Node2D" parent="."]
 
-[node name="Test" type="Node2D" parent="Enemys"]
+[node name="Boss-Empty" type="Node2D" parent="Enemys"]
 position = Vector2(602, 357)
 script = ExtResource("4_gx2gx")
 
-[node name="RigidBody2D" type="RigidBody2D" parent="Enemys/Test"]
+[node name="RigidBody2D" type="RigidBody2D" parent="Enemys/Boss-Empty"]
+lock_rotation = true
+script = ExtResource("5_b54qk")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemys/Test/RigidBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemys/Boss-Empty/RigidBody2D"]
 shape = SubResource("RectangleShape2D_gx2gx")
 
-[node name="Icon" type="Sprite2D" parent="Enemys/Test/RigidBody2D"]
+[node name="Icon" type="Sprite2D" parent="Enemys/Boss-Empty/RigidBody2D"]
 texture = ExtResource("1_r305v")
 
-[node name="Area2D" type="Area2D" parent="Enemys/Test"]
+[node name="Area2D" type="Area2D" parent="Enemys/Boss-Empty/RigidBody2D"]
+script = ExtResource("6_5tfw5")
+metadata/Y_Speed = 0.0
+metadata/X_Speed = 100.0
+metadata/MoveY = false
+metadata/MoveX = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemys/Test/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemys/Boss-Empty/RigidBody2D/Area2D"]
 position = Vector2(0, -162)
 shape = SubResource("RectangleShape2D_xhal0")

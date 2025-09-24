@@ -1,5 +1,5 @@
 res://Start.tscn
-res://PlayerMovement.gd
-res://PlayerCollison.gd
-res://FixedPlayerMovement.gd
+res://EmemyMoveToPlayer.gd
 res://EnemyAttraction.gd
+res://EnemyRigidbody.gd
+res://PlayerCollison.gd
