@@ -3,3 +3,6 @@ res://EmemyMoveToPlayer.gd
 res://EnemyAttraction.gd
 res://EnemyRigidbody.gd
 res://PlayerCollison.gd
+res://PlayerHitbox.gd
+res://FixedPlayerMovement.gd
+res://FixedPlayerHitbox.gd
