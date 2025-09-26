@@ -118,7 +118,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mgjkx"]
-size = Vector2(181, 159)
+size = Vector2(131.5, 132.5)
 
 [node name="Node2D" type="Node2D"]
 
@@ -193,7 +193,7 @@ metadata/MoveY = false
 metadata/MoveX = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enemys/Boss-Empty/RigidBody2D/Range"]
-position = Vector2(0, -162)
+position = Vector2(-34, -53)
 shape = SubResource("RectangleShape2D_xhal0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemys/Boss-Empty/RigidBody2D"]
@@ -208,7 +208,7 @@ metadata/MoveY = false
 metadata/MoveX = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enemys/Boss-Empty/RigidBody2D/Hurtbox"]
-position = Vector2(-1.5, -14.5)
+position = Vector2(0.25, 0.75)
 shape = SubResource("RectangleShape2D_mgjkx")
 
 [connection signal="body_entered" from="Player/CharacterBody2D/Hitbox" to="Player/CharacterBody2D" method="_on_hitbox_body_entered"]

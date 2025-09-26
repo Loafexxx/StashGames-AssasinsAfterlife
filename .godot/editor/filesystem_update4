@@ -1,5 +1,4 @@
 res://Start.tscn
-res://PlayerHitbox.gd
-res://BossArenaTeleporter.gd
 res://EnemyTPToArena.gd
-res://EmemyMoveToPlayer.gd
+res://Arena.tscn
+res://ArenaPlayerPovement.gd
