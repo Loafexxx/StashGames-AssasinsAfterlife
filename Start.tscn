@@ -470,7 +470,8 @@ shape = SubResource("RectangleShape2D_xhal0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemys/Boss-Empty/RigidBody2D"]
 sprite_frames = SubResource("SpriteFrames_2c8kb")
-animation = &"Idle"
+animation = &"Walking"
+frame_progress = 0.819562
 
 [node name="Hurtbox" type="Area2D" parent="Enemys/Boss-Empty/RigidBody2D" groups=["Boss"]]
 script = ExtResource("6_5tfw5")
