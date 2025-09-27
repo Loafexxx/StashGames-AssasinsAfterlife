@@ -1,22 +1,22 @@
-[gd_scene load_steps=5 format=3 uid="uid://4vgvx6uhud43"]
+[gd_scene load_steps=5 format=3 uid="uid://biliimpsm7wgm"]
 
 [ext_resource type="Texture2D" uid="uid://b50n4eo6anxak" path="res://White.png" id="1_bcb0y"]
 [ext_resource type="Texture2D" uid="uid://bwippo2hflvvs" path="res://icon.svg" id="2_u45fm"]
-[ext_resource type="Script" uid="uid://csi2ftawq1jpw" path="res://ArenaPlayerPovement.gd" id="2_vbyki"]
+[ext_resource type="Script" path="res://ArenaPlayerPovement.gd" id="2_vbyki"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vbyki"]
-size = Vector2(151.88907, 210.37119)
+size = Vector2(151.889, 210.371)
 
 [node name="Node2D" type="Node2D"]
 
 [node name="White" type="Sprite2D" parent="."]
-position = Vector2(576, 325.5)
+position = Vector2(593, 306)
 scale = Vector2(1208, 695)
 texture = ExtResource("1_bcb0y")
 
 [node name="Player" type="Node2D" parent="."]
 position = Vector2(563, 334)
-scale = Vector2(0.75100386, 0.75)
+scale = Vector2(0.751004, 0.75)
 script = ExtResource("2_vbyki")
 metadata/MovementSpeed = 500.0
 
@@ -24,17 +24,17 @@ metadata/MovementSpeed = 500.0
 texture = ExtResource("2_u45fm")
 
 [node name="Hitbox" type="Area2D" parent="Player" groups=["Sword"]]
-scale = Vector2(1.3315511, 1.3333333)
+scale = Vector2(1.33155, 1.33333)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Hitbox"]
 position = Vector2(166.5, 0)
-scale = Vector2(1.6788566, -1.0417895)
+scale = Vector2(1.67886, -1.04179)
 shape = SubResource("RectangleShape2D_vbyki")
 
 [node name="Shape" type="Sprite2D" parent="Player/Hitbox"]
-modulate = Color(0.91448474, 0, 0.5353122, 1)
-position = Vector2(155, 1.9073486e-06)
-scale = Vector2(130.22714, 101.37339)
+modulate = Color(0.914485, 0, 0.535312, 1)
+position = Vector2(155, 1.90735e-06)
+scale = Vector2(130.227, 101.373)
 texture = ExtResource("1_bcb0y")
 
-[node name="Enemy" type="Node2D" parent="."]
+[node name="enemy" type="Node2D" parent="."]
