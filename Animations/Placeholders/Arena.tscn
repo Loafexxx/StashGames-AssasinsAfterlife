@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://biliimpsm7wgm"]
+[gd_scene load_steps=6 format=3 uid="uid://biliimpsm7wgm"]
 
 [ext_resource type="Texture2D" uid="uid://b50n4eo6anxak" path="res://White.png" id="1_bcb0y"]
 [ext_resource type="Texture2D" uid="uid://bwippo2hflvvs" path="res://icon.svg" id="2_u45fm"]
 [ext_resource type="Script" path="res://ArenaPlayerPovement.gd" id="2_vbyki"]
+[ext_resource type="PackedScene" uid="uid://bnju35g1ec6w6" path="res://enemyalpha.tscn" id="4_uj4qe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vbyki"]
 size = Vector2(151.889, 210.371)
@@ -37,4 +38,4 @@ position = Vector2(155, 1.90735e-06)
 scale = Vector2(130.227, 101.373)
 texture = ExtResource("1_bcb0y")
 
-[node name="enemy" type="Node2D" parent="."]
+[node name="node 2d" parent="." instance=ExtResource("4_uj4qe")]
