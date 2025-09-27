@@ -1,5 +1,1 @@
-res://Start.tscn
-res://EnemyTPToArena.gd
-res://enemyalpha.tscn
-res://rigid_body_2d.gd
-res://Arena.tscn
+res://Animations/Placeholders/Arena.tscn
