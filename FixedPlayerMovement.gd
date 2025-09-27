@@ -7,7 +7,7 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-
+#test
 	# Handle jump.
 	if Input.is_action_just_pressed("Up") and is_on_floor():
 		velocity.y = get_meta("JumpHeight")
