@@ -1,7 +1,4 @@
 res://Start.tscn
-<<<<<<< HEAD
-=======
 res://EnemyTPToArena.gd
-res://Arena.tscn
-res://ArenaPlayerPovement.gd
->>>>>>> ca9c1b018130c61b31c97533bcd746ea554d7ff2
+res://enemyalpha.tscn
+res://rigid_body_2d.gd
