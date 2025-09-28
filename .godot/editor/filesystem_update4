@@ -1,0 +1,8 @@
+res://Arena.tscn
+res://rigid_body_2d.gd
+res://Start.tscn
+res://FixedPlayerMovement.gd
+res://animated_sprite_2d.gd
+res://idle.tres
+res://Mob-Arena.gd
+res://ArenaPlayerPovement.gd

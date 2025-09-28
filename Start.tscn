@@ -69,7 +69,7 @@
 [ext_resource type="Texture2D" uid="uid://bma5bk8tr2n3c" path="res://Animations/Placeholders/SwordWalking/3d0f4d6d-90dd-440f-b98b-6d1af86cea94-9.png" id="56_yhsyl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bupin"]
-size = Vector2(128, 129)
+size = Vector2(93.48561, 173.9651)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gxhcs"]
 animations = [{
@@ -403,12 +403,15 @@ platform_floor_layers = 4294967041
 script = ExtResource("1_upmy7")
 metadata/PlayerMovementSpeed = 400.0
 metadata/JumpHeight = -600.0
+metadata/DashSpeed = 200.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player/CharacterBody2D"]
+position = Vector2(-11.7055025, 10.999999)
 scale = Vector2(0.678297, 0.678297)
 shape = SubResource("RectangleShape2D_bupin")
 
 [node name="Hitbox" type="Area2D" parent="Player/CharacterBody2D" groups=["Player"]]
+position = Vector2(-12, 11)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player/CharacterBody2D/Hitbox"]
 scale = Vector2(0.678297, 0.678297)
@@ -443,6 +446,7 @@ position = Vector2(19.5, -4)
 shape = SubResource("RectangleShape2D_52bhu")
 
 [node name="Enemys" type="Node2D" parent="."]
+position = Vector2(242, -123)
 
 [node name="Boss-Empty" type="Node2D" parent="Enemys" groups=["Boss"]]
 position = Vector2(602, 357)
