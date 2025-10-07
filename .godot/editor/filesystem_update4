@@ -1,2 +1,13 @@
+<<<<<<< HEAD
 res://Animations/Placeholders/Arena.tscn
 res://Start.tscn
+=======
+res://Arena.tscn
+res://rigid_body_2d.gd
+res://Start.tscn
+res://FixedPlayerMovement.gd
+res://animated_sprite_2d.gd
+res://idle.tres
+res://Mob-Arena.gd
+res://ArenaPlayerPovement.gd
+>>>>>>> c027ec2b02241402b8647ffb8b54ad4e5897210b
