@@ -1,6 +1,5 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1758946503
-Arena.tscn::PackedScene::2971140264672813552::1758946448::0::1::::<><><>0<>0<><>::uid://b50n4eo6anxak::::res://White.png<>uid://bwippo2hflvvs::::res://icon.svg<>res://ArenaPlayerPovement.gd<>uid://bnju35g1ec6w6::::res://enemyalpha.tscn
+::res://::1759020838
 ArenaPlayerPovement.gd::GDScript::-1::1758932201::0::1::::<>Node2D<><>0<>0<><>::
 EmemyMoveToPlayer.gd::GDScript/GDScript::7139585179486968113::1758785597::0::1::::<>Area2D<><>0<>0<><>::
 enemyalpha.tscn::PackedScene::3318720979014838807::1758946418::0::1::::<><><>0<>0<><>::uid://ct3u86kajc5xc::::res://rigid_body_2d.gd<>uid://cnxpknor8bm70::::res://idle.tres
@@ -14,7 +13,8 @@ Start.tscn::PackedScene::5182887428223288802::1758946444::0::1::::<><><>0<>0<><>
 walk.tres::SpriteFrames::2993248762450536216::1758935914::0::1::::<><><>0<>0<><>::uid://dercfgn3c8foe::::res://Animations/Placeholders/Walking/42d4475a-0810-46cd-ab79-8000dd279384-0.png<>uid://bibaadq4inxor::::res://Animations/Placeholders/Walking/42d4475a-0810-46cd-ab79-8000dd279384-1.png<>uid://hg8hn63l6mlm::::res://Animations/Placeholders/Walking/42d4475a-0810-46cd-ab79-8000dd279384-2.png<>uid://dv7ohmaop7b33::::res://Animations/Placeholders/Walking/42d4475a-0810-46cd-ab79-8000dd279384-3.png<>uid://2bea44dpq27n::::res://Animations/Placeholders/Walking/42d4475a-0810-46cd-ab79-8000dd279384-4.png<>uid://1dg2dojb2cxk::::res://Animations/Placeholders/Walking/42d4475a-0810-46cd-ab79-8000dd279384-5.png<>uid://c5eu5h7j7o370::::res://Animations/Placeholders/Walking/42d4475a-0810-46cd-ab79-8000dd279384-6.png<>uid://c520iul18k04v::::res://Animations/Placeholders/Walking/42d4475a-0810-46cd-ab79-8000dd279384-7.png
 White.png::CompressedTexture2D::4544536778744471086::1758932201::1758932967::1::::<><><>0<>0<>34cdae9c1bc951fa488f9035177e7418<>res://.godot/imported/White.png-f90503419684127b20935d869365ec23.ctex::
 ::res://Animations/::1758785605
-::res://Animations/Placeholders/::1758939697
+::res://Animations/Placeholders/::1758946599
+Arena.tscn::PackedScene::2971140264672813552::1758946599::0::1::::<><><>0<>0<><>::uid://b50n4eo6anxak::::res://White.png<>uid://bwippo2hflvvs::::res://icon.svg<>res://ArenaPlayerPovement.gd<>uid://bnju35g1ec6w6::::res://enemyalpha.tscn
 ::res://Animations/Placeholders/Dash/::1758939768
 2cb44f10-4724-4d18-8bf3-bc1ac71868b9-0.png::CompressedTexture2D::5030563280148022374::1758939697::1758939768::1::::<><><>0<>0<>1d28e7b561aba6e72140da6197fe406f<>res://.godot/imported/2cb44f10-4724-4d18-8bf3-bc1ac71868b9-0.png-b5809c096fb7748aab9c3071fcad926d.ctex::
 2cb44f10-4724-4d18-8bf3-bc1ac71868b9-1.png::CompressedTexture2D::2406194451027428109::1758939697::1758939768::1::::<><><>0<>0<>dda45f72f7a3a04dd281248002191a02<>res://.godot/imported/2cb44f10-4724-4d18-8bf3-bc1ac71868b9-1.png-1f1f5acb5e9ccd0e1b6e501b847f96a2.ctex::
