@@ -395,7 +395,7 @@ size = Vector2(131.5, 132.5)
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Player" type="Node2D" parent="."]
+[node name="Player" type="Node2D" parent="." groups=["Player"]]
 position = Vector2(146, 15)
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="Player" groups=["Player"]]
@@ -406,7 +406,7 @@ metadata/PlayerMovementSpeed = 400.0
 metadata/JumpHeight = -600.0
 metadata/DashSpeed = 200.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/CharacterBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/CharacterBody2D" groups=["Player"]]
 position = Vector2(-11.7055025, 10.999999)
 scale = Vector2(0.678297, 0.678297)
 shape = SubResource("RectangleShape2D_bupin")

@@ -84,11 +84,9 @@ func _process(delta: float) -> void:
 			else:
 				if aimdirection == 3:
 					SwordHitbox.global_rotation_degrees = 180
-					print("3")
 				else:
 					if aimdirection == 4:
 						SwordHitbox.global_rotation_degrees = 270
-						print("4")
 		
 	if swordequiptclockon:
 		swordonclock += 1 * delta
@@ -97,7 +95,6 @@ func _process(delta: float) -> void:
 			swordonclock = 0
 	if swordswinging:
 		swordswingclock += 1 * delta
-		print(swordswingclock)
 		if swordswingclock > 0.33:
 			swordswinging = false
 			animatedsprite.play("Idle")

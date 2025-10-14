@@ -11,5 +11,5 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_area_entered(body):
-	if body.name == "Boss":
-		print("HI")
+	if body.name == "PlayerSword Arena":
+		print("DRAKIE PIE")
