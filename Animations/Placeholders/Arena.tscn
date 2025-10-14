@@ -170,10 +170,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vbyki"]
-size = Vector2(220.38806, 188.13782)
+size = Vector2(141.16751, 232.29262)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pedq7"]
-size = Vector2(114.51341, 189.33334)
+size = Vector2(131.82356, 208.00012)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8qske"]
 size = Vector2(96, 126)
@@ -195,31 +195,25 @@ script = ExtResource("2_vbyki")
 metadata/MovementSpeed = 500.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
+position = Vector2(-74.566864, -38.666664)
 scale = Vector2(1.787494, 1.7874938)
 sprite_frames = SubResource("SpriteFrames_vjrpy")
 animation = &"SwordSwing"
-frame_progress = 0.4544897
 
 [node name="Damagebox" type="Area2D" parent="Player" groups=["PlayerSword Arena"]]
 scale = Vector2(1.3315511, 1.3333333)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Damagebox"]
-position = Vector2(224, 16)
+position = Vector2(4.5, -16)
 scale = Vector2(1.6788566, -1.0417895)
 shape = SubResource("RectangleShape2D_vbyki")
 
-[node name="Hitbox" type="Area2D" parent="Player" groups=["PlayerSword Arena"]]
+[node name="Hitbox" type="Area2D" parent="Player"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Hitbox"]
-position = Vector2(-5.326233, 37.333313)
+position = Vector2(-81.89038, -27.99997)
 scale = Vector2(1, 0.99999964)
 shape = SubResource("RectangleShape2D_pedq7")
-
-[node name="White" type="Sprite2D" parent="Player/Hitbox"]
-modulate = Color(0.9357095, 0.00023276031, 0.81619644, 1)
-position = Vector2(298.93323, 21.333302)
-scale = Vector2(496.66858, 258.66663)
-texture = ExtResource("1_bcb0y")
 
 [node name="Enemy" type="Node2D" parent="."]
 
@@ -233,9 +227,12 @@ metadata/CanMoveY = true
 metadata/CanMoveX = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Mob"]
+texture_filter = 1
 sprite_frames = ExtResource("5_ml6qp")
-animation = &"Run"
+animation = &"Idle"
 autoplay = "Idle"
+frame = 7
+frame_progress = 0.17436932
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mob"]
 position = Vector2(-13, 3)
@@ -247,3 +244,5 @@ script = ExtResource("40_4ukya")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mob/Hurtbox"]
 position = Vector2(-12, 3.5)
 shape = SubResource("RectangleShape2D_desci")
+
+[connection signal="area_entered" from="Mob/Hurtbox" to="Mob" method="_on_hurtbox_area_entered"]

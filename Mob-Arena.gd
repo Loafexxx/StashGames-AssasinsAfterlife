@@ -20,3 +20,11 @@ func _process(delta: float) -> void:
 			global_position.y += get_meta("Speed") * delta
 		else: 
 			global_position.y -= get_meta("Speed") * delta
+			
+
+
+
+func _on_hurtbox_area_entered(area: Area2D) -> void:
+	if area.is_in_group("PlayerSword Arena"):
+		print("HI")
+		animation.modulate("Red")

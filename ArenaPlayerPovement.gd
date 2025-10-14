@@ -1,7 +1,7 @@
 extends Node2D
 
 @onready var player = $"."
-@onready var SwordHitbox = $Hitbox
+@onready var SwordHitbox = $Damagebox
 @onready var animatedsprite = $AnimatedSprite2D
 
 var waiting = 0
@@ -53,20 +53,21 @@ func _process(delta: float) -> void:
 				animatedsprite.play("SwordRunning")
 		animatedsprite.flip_h = false
 		
-	
-	if Input.is_action_just_pressed("Right aim"):
+	if Input.is_action_just_pressed("Right"):
 		aimdirection = 1
+		
 	else:
-		if Input.is_action_just_pressed("Down aim"):
+		if Input.is_action_just_pressed("Down"):
 			aimdirection = 2
 		else:
 			
-			if Input.is_action_just_pressed("Left aim"):
+			if Input.is_action_just_pressed("Left"):
 				aimdirection = 3
 				
 			else:
-				if Input.is_action_just_pressed("Up aim"):
+				if Input.is_action_just_pressed("Up"):
 					aimdirection = 4
+					
 					
 		
 	if Input.is_action_just_pressed("Attack"):

@@ -1,1 +1,5 @@
+res://Animations/Placeholders/ArenaMobDamage.gd
+res://Mob-Arena.gd
 res://Animations/Placeholders/Arena.tscn
+res://ArenaPlayerPovement.gd
+res://PlayerHitbox.gd
