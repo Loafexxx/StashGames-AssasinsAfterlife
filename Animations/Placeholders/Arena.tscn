@@ -170,7 +170,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vbyki"]
-size = Vector2(141.16751, 232.29262)
+size = Vector2(158.44118, 258.20956)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pedq7"]
 size = Vector2(131.82356, 208.00012)
@@ -184,6 +184,7 @@ size = Vector2(110, 139)
 [node name="Node2D" type="Node2D"]
 
 [node name="White" type="Sprite2D" parent="."]
+modulate = Color(0.45041418, 0.6440828, 0.281541, 1)
 position = Vector2(576, 325.5)
 scale = Vector2(1208, 695)
 texture = ExtResource("1_bcb0y")
@@ -193,6 +194,7 @@ position = Vector2(563, 334)
 scale = Vector2(0.75100386, 0.75)
 script = ExtResource("2_vbyki")
 metadata/MovementSpeed = 500.0
+metadata/DamageBuffAmount = 4.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
 position = Vector2(-74.566864, -38.666664)
@@ -201,10 +203,11 @@ sprite_frames = SubResource("SpriteFrames_vjrpy")
 animation = &"SwordSwing"
 
 [node name="Damagebox" type="Area2D" parent="Player" groups=["PlayerSword Arena"]]
+position = Vector2(2138.471, -28)
 scale = Vector2(1.3315511, 1.3333333)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Damagebox"]
-position = Vector2(4.5, -16)
+position = Vector2(127.00003, -0.99999976)
 scale = Vector2(1.6788566, -1.0417895)
 shape = SubResource("RectangleShape2D_vbyki")
 
@@ -225,14 +228,14 @@ script = ExtResource("4_jycnn")
 metadata/Speed = 200.0
 metadata/CanMoveY = true
 metadata/CanMoveX = true
+metadata/HitbackSpeed = 100.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Mob"]
 texture_filter = 1
 sprite_frames = ExtResource("5_ml6qp")
-animation = &"Idle"
+animation = &"Hurt"
 autoplay = "Idle"
-frame = 7
-frame_progress = 0.17436932
+frame_progress = 0.99722236
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mob"]
 position = Vector2(-13, 3)
@@ -244,5 +247,14 @@ script = ExtResource("40_4ukya")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mob/Hurtbox"]
 position = Vector2(-12, 3.5)
 shape = SubResource("RectangleShape2D_desci")
+
+[node name="HealthBar" type="ProgressBar" parent="Mob"]
+offset_left = -47.0
+offset_top = -78.0
+offset_right = 46.051872
+offset_bottom = -60.46849
+scale = Vector2(0.74152184, 0.74152184)
+value = 100.0
+show_percentage = false
 
 [connection signal="area_entered" from="Mob/Hurtbox" to="Mob" method="_on_hurtbox_area_entered"]

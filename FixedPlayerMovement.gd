@@ -20,7 +20,6 @@ func _physics_process(delta: float) -> void:
 	
 	if dashingdelay:
 		dashdelayclock += 1 * delta
-		print(dashdelayclock)
 		if dashdelayclock > 0.5:
 			dashingdelay = false
 			dashdelayclock = 0

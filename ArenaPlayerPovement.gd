@@ -11,6 +11,7 @@ var swordswingclock = 0
 var swordswinging = false
 var swordonclock = 0;
 var swordequiptclockon = false
+var running = false
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -20,6 +21,7 @@ func _process(delta: float) -> void:
 		
 	
 	if Input.is_action_pressed("Down"):
+		aimdirection = 2
 		position.y += get_meta("MovementSpeed") * delta
 		if not swordswinging:
 			if not swordequiptclockon:
@@ -28,6 +30,7 @@ func _process(delta: float) -> void:
 				animatedsprite.play("SwordRunning")
 		
 	if Input.is_action_pressed("Up"):
+		aimdirection = 4
 		position.y -= get_meta("MovementSpeed") * delta
 		if not swordswinging:
 			if not swordequiptclockon:
@@ -36,6 +39,7 @@ func _process(delta: float) -> void:
 				animatedsprite.play("SwordRunning")
 		
 	if Input.is_action_pressed("Left"):
+		aimdirection = 3
 		position.x -= get_meta("MovementSpeed") * delta
 		if not swordswinging:
 			if not swordequiptclockon:
@@ -45,30 +49,21 @@ func _process(delta: float) -> void:
 		animatedsprite.flip_h = true
 
 	if Input.is_action_pressed("Right"):
+		animatedsprite.flip_h = false
+		aimdirection = 1
 		position.x += get_meta("MovementSpeed") * delta
 		if not swordswinging:
 			if not swordequiptclockon:
 				animatedsprite.play("Running")
 			else:
 				animatedsprite.play("SwordRunning")
-		animatedsprite.flip_h = false
-		
-	if Input.is_action_just_pressed("Right"):
-		aimdirection = 1
-		
-	else:
-		if Input.is_action_just_pressed("Down"):
-			aimdirection = 2
-		else:
-			
-			if Input.is_action_just_pressed("Left"):
-				aimdirection = 3
-				
-			else:
-				if Input.is_action_just_pressed("Up"):
-					aimdirection = 4
-					
-					
+								
+	if not Input.is_action_pressed("Right"):
+		if not Input.is_action_pressed("Left"):
+			if not Input.is_action_pressed("Down"):
+				if not Input.is_action_pressed("Up"):
+					if not swordswinging:
+						animatedsprite.play("Idle")
 		
 	if Input.is_action_just_pressed("Attack"):
 		swordequiptclockon = true

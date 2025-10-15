@@ -1,10 +1,16 @@
-[gd_resource type="SpriteFrames" load_steps=44 format=3 uid="uid://cnxpknor8bm70"]
+[gd_resource type="SpriteFrames" load_steps=50 format=3 uid="uid://cnxpknor8bm70"]
 
+[ext_resource type="Texture2D" uid="uid://eihyyinuuig2" path="res://Animations/Placeholders/Hurt/e7e3eecb-c2a8-48f2-99fd-01ca9ba95c0f-0.png" id="1_a4kv6"]
 [ext_resource type="Texture2D" uid="uid://djm40d5k0f4fo" path="res://Animations/Placeholders/Idle/frame_00_delay-0.09s.png" id="1_s1iuj"]
+[ext_resource type="Texture2D" uid="uid://d0jwecv8bsrym" path="res://Animations/Placeholders/Hurt/e7e3eecb-c2a8-48f2-99fd-01ca9ba95c0f-1.png" id="2_3v1jp"]
 [ext_resource type="Texture2D" uid="uid://q43bdiclp6eu" path="res://Animations/Placeholders/Idle/frame_01_delay-0.09s.png" id="2_41hx5"]
 [ext_resource type="Texture2D" uid="uid://cr3hjqcj5lhs0" path="res://Animations/Placeholders/Idle/frame_02_delay-0.09s.png" id="3_2l4j4"]
+[ext_resource type="Texture2D" uid="uid://cieu86nsr3ula" path="res://Animations/Placeholders/Hurt/e7e3eecb-c2a8-48f2-99fd-01ca9ba95c0f-2.png" id="3_kbpb1"]
+[ext_resource type="Texture2D" uid="uid://xq7j1lavfyhe" path="res://Animations/Placeholders/Hurt/e7e3eecb-c2a8-48f2-99fd-01ca9ba95c0f-3.png" id="4_b20bj"]
 [ext_resource type="Texture2D" uid="uid://bwtcv6rr2serm" path="res://Animations/Placeholders/Idle/frame_03_delay-0.09s.png" id="4_enrtb"]
+[ext_resource type="Texture2D" uid="uid://c8km4pwf1la3m" path="res://Animations/Placeholders/Hurt/e7e3eecb-c2a8-48f2-99fd-01ca9ba95c0f-4.png" id="5_fu5l8"]
 [ext_resource type="Texture2D" uid="uid://c587ulrp01gai" path="res://Animations/Placeholders/Idle/frame_04_delay-0.09s.png" id="5_nowl7"]
+[ext_resource type="Texture2D" uid="uid://disg6foj50pns" path="res://Animations/Placeholders/Hurt/e7e3eecb-c2a8-48f2-99fd-01ca9ba95c0f-5.png" id="6_d13h8"]
 [ext_resource type="Texture2D" uid="uid://c3mwi51ca2jdt" path="res://Animations/Placeholders/Idle/frame_05_delay-0.09s.png" id="6_plwtn"]
 [ext_resource type="Texture2D" uid="uid://dq5bb67qrdxaf" path="res://Animations/Placeholders/Idle/frame_06_delay-0.09s.png" id="7_g1ynd"]
 [ext_resource type="Texture2D" uid="uid://dc3dvd30o24ds" path="res://Animations/Placeholders/Idle/frame_07_delay-0.09s.png" id="8_dpxd2"]
@@ -46,6 +52,29 @@
 
 [resource]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_a4kv6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_3v1jp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_kbpb1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_b20bj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_fu5l8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_d13h8")
+}],
+"loop": true,
+"name": &"Hurt",
+"speed": 10.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_s1iuj")
