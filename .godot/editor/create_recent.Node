@@ -1,6 +1,9 @@
-AnimatedSprite2D
+ProgressBar
+Control
+TextureProgressBar
 CollisionShape2D
 Area2D
+AnimatedSprite2D
 Node2D
 RigidBody2D
 StaticBody2D

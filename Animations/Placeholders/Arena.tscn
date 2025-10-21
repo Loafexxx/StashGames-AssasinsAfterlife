@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://4vgvx6uhud43"]
+[gd_scene load_steps=46 format=3 uid="uid://4vgvx6uhud43"]
 
 [ext_resource type="Texture2D" uid="uid://b50n4eo6anxak" path="res://White.png" id="1_bcb0y"]
 [ext_resource type="Script" uid="uid://csi2ftawq1jpw" path="res://ArenaPlayerPovement.gd" id="2_vbyki"]
@@ -39,6 +39,7 @@
 [ext_resource type="Texture2D" uid="uid://4p2ytrnijf0p" path="res://Animations/Placeholders/SwordSwinging/45198bbf-b9e7-49bc-8274-f5bb0325a7e6-6.png" id="26_kc0ly"]
 [ext_resource type="Texture2D" uid="uid://cko0ortqagmfx" path="res://Animations/Placeholders/SwordSwinging/45198bbf-b9e7-49bc-8274-f5bb0325a7e6-7.png" id="27_jcqsv"]
 [ext_resource type="Texture2D" uid="uid://dsdctqqlgiyd" path="res://Animations/Placeholders/SwordSwinging/45198bbf-b9e7-49bc-8274-f5bb0325a7e6-8.png" id="28_noxf4"]
+[ext_resource type="Script" uid="uid://drykboenlvpwj" path="res://Animations/Placeholders/ArenaMobDamage.gd" id="40_4ukya"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vjrpy"]
 animations = [{
@@ -169,14 +170,21 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vbyki"]
-size = Vector2(151.88907, 210.37119)
+size = Vector2(158.44118, 258.20956)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pedq7"]
+size = Vector2(131.82356, 208.00012)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8qske"]
 size = Vector2(96, 126)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_desci"]
+size = Vector2(110, 139)
+
 [node name="Node2D" type="Node2D"]
 
 [node name="White" type="Sprite2D" parent="."]
+modulate = Color(0.45041418, 0.6440828, 0.281541, 1)
 position = Vector2(576, 325.5)
 scale = Vector2(1208, 695)
 texture = ExtResource("1_bcb0y")
@@ -186,20 +194,29 @@ position = Vector2(563, 334)
 scale = Vector2(0.75100386, 0.75)
 script = ExtResource("2_vbyki")
 metadata/MovementSpeed = 500.0
+metadata/DamageBuffAmount = 4.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
+position = Vector2(-74.566864, -38.666664)
 scale = Vector2(1.787494, 1.7874938)
 sprite_frames = SubResource("SpriteFrames_vjrpy")
 animation = &"SwordSwing"
-frame_progress = 0.4544897
 
-[node name="Hitbox" type="Area2D" parent="Player" groups=["Sword"]]
+[node name="Damagebox" type="Area2D" parent="Player" groups=["PlayerSword Arena"]]
+position = Vector2(2138.471, -28)
 scale = Vector2(1.3315511, 1.3333333)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Hitbox"]
-position = Vector2(166.5, 0)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Damagebox"]
+position = Vector2(127.00003, -0.99999976)
 scale = Vector2(1.6788566, -1.0417895)
 shape = SubResource("RectangleShape2D_vbyki")
+
+[node name="Hitbox" type="Area2D" parent="Player"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Hitbox"]
+position = Vector2(-81.89038, -27.99997)
+scale = Vector2(1, 0.99999964)
+shape = SubResource("RectangleShape2D_pedq7")
 
 [node name="Enemy" type="Node2D" parent="."]
 
@@ -211,12 +228,33 @@ script = ExtResource("4_jycnn")
 metadata/Speed = 200.0
 metadata/CanMoveY = true
 metadata/CanMoveX = true
+metadata/HitbackSpeed = 100.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Mob"]
+texture_filter = 1
 sprite_frames = ExtResource("5_ml6qp")
-animation = &"Run"
+animation = &"Hurt"
 autoplay = "Idle"
+frame_progress = 0.99722236
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mob"]
 position = Vector2(-13, 3)
 shape = SubResource("RectangleShape2D_8qske")
+
+[node name="Hurtbox" type="Area2D" parent="Mob"]
+script = ExtResource("40_4ukya")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mob/Hurtbox"]
+position = Vector2(-12, 3.5)
+shape = SubResource("RectangleShape2D_desci")
+
+[node name="HealthBar" type="ProgressBar" parent="Mob"]
+offset_left = -47.0
+offset_top = -78.0
+offset_right = 46.051872
+offset_bottom = -60.46849
+scale = Vector2(0.74152184, 0.74152184)
+value = 100.0
+show_percentage = false
+
+[connection signal="area_entered" from="Mob/Hurtbox" to="Mob" method="_on_hurtbox_area_entered"]
